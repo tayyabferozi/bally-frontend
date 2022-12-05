@@ -5,7 +5,9 @@ import "react-toastify/dist/ReactToastify.css";
 import Routes from "./Routes";
 
 function App() {
-  axios.defaults.baseURL = "http://localhost:5000/api/";
+  // axios.defaults.baseURL = "http://localhost:5000/api/";
+  axios.defaults.baseURL =
+    "https://bally-backend-production.up.railway.app/api/";
 
   return (
     <>
