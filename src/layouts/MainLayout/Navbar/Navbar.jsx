@@ -19,7 +19,7 @@ function NavbarComp() {
                 Add Record
               </NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/records">
-                List Records
+                Records List
               </NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="Products" id="basic-nav-dropdown">
@@ -27,7 +27,7 @@ function NavbarComp() {
                 Add Product
               </NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/products">
-                List Products
+                Products List
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
