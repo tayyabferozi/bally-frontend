@@ -178,8 +178,12 @@ function AddRecord() {
         obj.gProduction = g;
         obj.kgProduction = kg;
 
-        obj.kgLoss = formState.ballWeight * 1000 - obj.gProduction;
-        obj.gLoss = formState.ballWeight - obj.kgProduction;
+        console.log(formState.ballWeight, obj.gProduction);
+
+        obj.kgLoss = formState.ballWeight - obj.kgProduction;
+        obj.gLoss = formState.ballWeight * 1000 - obj.gProduction;
+
+        obj.gLossPercent = (obj.gLoss / (formState.ballWeight * 1000)) * 100;
       }
     }
 
@@ -485,16 +489,7 @@ function AddRecord() {
                       <Card.Body bg="success" className="text-center">
                         <Card.Title>
                           <h2>{productionState.kgProduction} kg</h2>
-                        </Card.Title>
-                        <Card.Text>Actual Production</Card.Text>
-                      </Card.Body>
-                    </Card>
-                  </Col>
-                  <Col md={6}>
-                    <Card bg="success" text="white">
-                      <Card.Body bg="success" className="text-center">
-                        <Card.Title>
-                          <h2>{productionState.gProduction} g</h2>
+                          <h5>({productionState.gProduction} g)</h5>
                         </Card.Title>
                         <Card.Text>Actual Production</Card.Text>
                       </Card.Body>
@@ -505,16 +500,7 @@ function AddRecord() {
                       <Card.Body bg="primary" className="text-center">
                         <Card.Title>
                           <h2>{formState.ballWeight} kg</h2>
-                        </Card.Title>
-                        <Card.Text>Ideal Production</Card.Text>
-                      </Card.Body>
-                    </Card>
-                  </Col>
-                  <Col md={6}>
-                    <Card bg="primary" text="white">
-                      <Card.Body bg="primary" className="text-center">
-                        <Card.Title>
-                          <h2>{formState.ballWeight * 1000} g</h2>
+                          <h5>({formState.ballWeight * 1000} g)</h5>
                         </Card.Title>
                         <Card.Text>Ideal Production</Card.Text>
                       </Card.Body>
@@ -524,17 +510,23 @@ function AddRecord() {
                     <Card bg="danger" text="white">
                       <Card.Body bg="primary" className="text-center">
                         <Card.Title>
-                          <h2>{productionState.gLoss} g</h2>
-                        </Card.Title>
-                        <Card.Text>Loss</Card.Text>
-                      </Card.Body>
-                    </Card>
-                  </Col>
-                  <Col md={6}>
-                    <Card bg="danger" text="white">
-                      <Card.Body bg="primary" className="text-center">
-                        <Card.Title>
-                          <h2>{productionState.kgLoss} kg</h2>
+                          <h2>
+                            {productionState.gLossPercent &&
+                              productionState.gLossPercent.toFixed(2)}
+                            %
+                          </h2>
+                          <h5>
+                            (
+                            {productionState.kgLoss &&
+                              productionState.kgLoss.toFixed(2)}{" "}
+                            kg)
+                          </h5>
+                          <h5>
+                            (
+                            {productionState.gLoss &&
+                              productionState.gLoss.toFixed(2)}{" "}
+                            g)
+                          </h5>
                         </Card.Title>
                         <Card.Text>Loss</Card.Text>
                       </Card.Body>
