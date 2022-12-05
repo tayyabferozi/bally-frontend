@@ -79,6 +79,7 @@ const ListRecords = () => {
               <th>Ball Weight (g)</th>
               <th>Production (g)</th>
               <th>Loss (g)</th>
+              <th>Loss (%age)</th>
               <th className="text-center">Delete</th>
             </tr>
           </thead>
@@ -96,6 +97,7 @@ const ListRecords = () => {
                   <td>{el.ballWeight}</td>
                   <td>{el.gProduction}</td>
                   <td>{el.gLoss}</td>
+                  <td>{el.gLossPercent}</td>
                   <td className="text-center">
                     <img
                       className="c-pointer"
