@@ -68,44 +68,48 @@ const ListRecords = () => {
         </Modal.Footer>
       </Modal>
 
-      <Table bordered className="mt-4">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Date</th>
-            <th>Ball Num</th>
-            <th>Batch Num</th>
-            <th>Ball Weight (g)</th>
-            <th>Production (g)</th>
-            <th>Loss (g)</th>
-            <th className="text-center">Delete</th>
-          </tr>
-        </thead>
-        <tbody>
-          {recordsList.map((el, idx) => {
-            console.log(el);
-            return (
-              <tr key={el._id}>
-                <td>{idx + 1}</td>
-                <td>{el.date ? new Date(el.date).toLocaleDateString() : ""}</td>
-                <td>{el.ballNum}</td>
-                <td>{el.batchNum}</td>
-                <td>{el.ballWeight}</td>
-                <td>{el.gProduction}</td>
-                <td>{el.gLoss}</td>
-                <td className="text-center">
-                  <img
-                    className="c-pointer"
-                    src="/assets/vectors/icons/trash.svg"
-                    alt="trash"
-                    onClick={handleShow}
-                  />
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </Table>
+      <div className="table-container">
+        <Table bordered className="mt-4">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Date</th>
+              <th>Ball Num</th>
+              <th>Batch Num</th>
+              <th>Ball Weight (g)</th>
+              <th>Production (g)</th>
+              <th>Loss (g)</th>
+              <th className="text-center">Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            {recordsList.map((el, idx) => {
+              console.log(el);
+              return (
+                <tr key={el._id}>
+                  <td>{idx + 1}</td>
+                  <td>
+                    {el.date ? new Date(el.date).toLocaleDateString() : ""}
+                  </td>
+                  <td>{el.ballNum}</td>
+                  <td>{el.batchNum}</td>
+                  <td>{el.ballWeight}</td>
+                  <td>{el.gProduction}</td>
+                  <td>{el.gLoss}</td>
+                  <td className="text-center">
+                    <img
+                      className="c-pointer"
+                      src="/assets/vectors/icons/trash.svg"
+                      alt="trash"
+                      onClick={handleShow}
+                    />
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </Table>
+      </div>
     </>
   );
 };

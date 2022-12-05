@@ -197,7 +197,7 @@ function AddRecord() {
             <h2 className="text-center mb-4">Enter the ball information</h2>
             {/* <Form onSubmit={addRecordHandler}> */}
             <Form.Group className="mb-3" controlId="ballWeight">
-              <Form.Label>Weight of Ball (in KG)</Form.Label>
+              <Form.Label>Weight of Ball (in grams)</Form.Label>
               <Form.Control
                 name="ballWeight"
                 value={formState.ballWeight}

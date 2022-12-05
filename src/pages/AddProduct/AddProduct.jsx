@@ -74,7 +74,7 @@ function AddProduct() {
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="sheetLength">
-              <Form.Label>Single Sheet Length</Form.Label>
+              <Form.Label>Single Sheet Length (mm)</Form.Label>
               <Form.Control
                 name="sheetLength"
                 onChange={inputChangeHandler}

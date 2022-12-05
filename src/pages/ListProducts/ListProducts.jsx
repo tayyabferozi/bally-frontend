@@ -66,47 +66,48 @@ const ListProducts = () => {
           </Button>
         </Modal.Footer>
       </Modal>
-
-      <Table bordered className="mt-4">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>No. of sheets</th>
-            <th>Sheet length</th>
-            <th>Log Weight</th>
-            <th>Rolls in a log</th>
-            <th>Roll Weight</th>
-            <th className="text-center">Delete</th>
-          </tr>
-        </thead>
-        <tbody>
-          {productsList.map((el, idx) => {
-            return (
-              <tr key={el._id}>
-                <td>{idx + 1}</td>
-                <td>{el.name}</td>
-                <td>{el.sheetsNum}</td>
-                <td>{el.sheetLength}</td>
-                <td>{el.logWeight}</td>
-                <td>{el.rollsNum}</td>
-                <td>{el.rollWeight}</td>
-                <td className="text-center">
-                  <img
-                    className="c-pointer"
-                    src="/assets/vectors/icons/trash.svg"
-                    alt="trash"
-                    onClick={() => {
-                      handleShow();
-                      setId(el._id);
-                    }}
-                  />
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </Table>
+      <div className="table-container">
+        <Table bordered className="mt-4">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>No. of sheets</th>
+              <th>Sheet length</th>
+              <th>Log Weight</th>
+              <th>Rolls in a log</th>
+              <th>Roll Weight</th>
+              <th className="text-center">Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            {productsList.map((el, idx) => {
+              return (
+                <tr key={el._id}>
+                  <td>{idx + 1}</td>
+                  <td>{el.name}</td>
+                  <td>{el.sheetsNum}</td>
+                  <td>{el.sheetLength}</td>
+                  <td>{el.logWeight}</td>
+                  <td>{el.rollsNum}</td>
+                  <td>{el.rollWeight}</td>
+                  <td className="text-center">
+                    <img
+                      className="c-pointer"
+                      src="/assets/vectors/icons/trash.svg"
+                      alt="trash"
+                      onClick={() => {
+                        handleShow();
+                        setId(el._id);
+                      }}
+                    />
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </Table>
+      </div>
     </>
   );
 };
