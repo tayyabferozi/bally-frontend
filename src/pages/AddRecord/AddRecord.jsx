@@ -201,7 +201,7 @@ function AddRecord() {
             <h2 className="text-center mb-4">Enter the ball information</h2>
             {/* <Form onSubmit={addRecordHandler}> */}
             <Form.Group className="mb-3" controlId="ballWeight">
-              <Form.Label>Weight of Ball (in grams)</Form.Label>
+              <Form.Label>Weight of Ball</Form.Label>
               <Form.Control
                 name="ballWeight"
                 value={formState.ballWeight}
@@ -211,7 +211,7 @@ function AddRecord() {
               />
               {productionState.ballWeight && (
                 <Form.Text muted>
-                  (After 3% deduction =&gt; {productionState.ballWeight} KG)
+                  (After 3% deduction =&gt; {productionState.ballWeight} grams)
                 </Form.Text>
               )}
             </Form.Group>

@@ -5,7 +5,7 @@ const Landing = () => {
     <>
       <div id="landing">
         <h1 className="">
-          Now Keep Record of Your Wastage/Production Like A Pro 😎
+          Now Keep Record of Your Production/Wastage Like A Pro 😎
         </h1>
       </div>
     </>
